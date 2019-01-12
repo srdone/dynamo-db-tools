@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist && tsc",
+    "test": "mocha -r ts-node/register ./**/*.test.ts"
   },
   "keywords": [
     "dynamodb",
@@ -24,6 +24,12 @@
   "homepage": "https://github.com/srdone/dynamo-db-tools#readme",
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.18",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   },
   "dependencies": {
