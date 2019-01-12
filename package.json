@@ -1,15 +1,32 @@
 {
-  "name": "dynamo-db-tools",
-  "version": "0.1.0",
+  "name": "@srdone/dynamo-db-tools",
+  "version": "0.0.1",
   "description": "Helper functions for working with AWS DynamoDB",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "dynamodb",
     "aws"
   ],
-  "author": "Stephen Done",
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srdone/dynamo-db-tools.git"
+  },
+  "author": "Stephen Done <srdone@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srdone/dynamo-db-tools/issues"
+  },
+  "homepage": "https://github.com/srdone/dynamo-db-tools#readme",
+  "devDependencies": {
+    "@types/aws-sdk": "^2.7.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.387.0"
+  }
 }
