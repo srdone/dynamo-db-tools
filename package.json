@@ -1,5 +1,5 @@
 {
-  "name": "@srdone/dynamo-db-tools",
+  "name": "dynamo-db-helper-functions",
   "version": "0.0.1",
   "description": "Helper functions for working with AWS DynamoDB",
   "main": "dist/index.js",
