@@ -1,6 +1,6 @@
 {
   "name": "dynamo-db-helper-functions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper functions for working with AWS DynamoDB",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
