@@ -1,0 +1,15 @@
+{
+  "name": "dynamo-db-tools",
+  "version": "0.1.0",
+  "description": "Helper functions for working with AWS DynamoDB",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dynamodb",
+    "aws"
+  ],
+  "author": "Stephen Done",
+  "license": "MIT"
+}
