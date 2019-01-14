@@ -84,12 +84,20 @@ export function toPromise<T, R, V>(func: (param: T, cb: (err: any, data: V) => v
 }
 
 export function createSchemaMapper(schema: any) {
-    return (obj: any) => {
+    return (obj: any): any => {
         return Object.entries(obj).reduce((prev, [key, value]) => {
-            if (schema[key]) {
+            const dataType = schema[key];
+            if (dataType && !Object.values(ATTRIBUTE_TYPES).includes(dataType) && obj[key]) {
                 return Object.assign({}, prev, {
                     [key]: {
-                        [schema[key]]: attributeMappers[schema[key]](value)
+                        [ATTRIBUTE_TYPES.MAP]: createSchemaMapper(schema[key])(obj[key])
+                    }
+                });
+            }
+            if (dataType) {
+                return Object.assign({}, prev, {
+                    [key]: {
+                        [dataType]: attributeMappers[dataType](value)
                     }
                 })
             }

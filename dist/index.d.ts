@@ -13,4 +13,4 @@ export declare const ATTRIBUTE_TYPES: {
 };
 export declare function getDynamoDBInstance(): DynamoDB;
 export declare function toPromise<T, R, V>(func: (param: T, cb: (err: any, data: V) => void) => R, param: T): Promise<{}>;
-export declare function createSchemaMapper(schema: any): (obj: any) => {};
+export declare function createSchemaMapper(schema: any): (obj: any) => any;

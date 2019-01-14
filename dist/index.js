@@ -85,10 +85,18 @@ exports.toPromise = toPromise;
 function createSchemaMapper(schema) {
     return (obj) => {
         return Object.entries(obj).reduce((prev, [key, value]) => {
-            if (schema[key]) {
+            const dataType = schema[key];
+            if (dataType && !Object.values(exports.ATTRIBUTE_TYPES).includes(dataType) && obj[key]) {
                 return Object.assign({}, prev, {
                     [key]: {
-                        [schema[key]]: attributeMappers[schema[key]](value)
+                        [exports.ATTRIBUTE_TYPES.MAP]: createSchemaMapper(schema[key])(obj[key])
+                    }
+                });
+            }
+            if (dataType) {
+                return Object.assign({}, prev, {
+                    [key]: {
+                        [dataType]: attributeMappers[dataType](value)
                     }
                 });
             }
